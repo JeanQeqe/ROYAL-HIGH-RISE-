@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Royal High Rise Holdings | Chrome Commodity Trading & Logistics</title>
+<meta name="description" content="South African commodity trading and logistics company specializing in chrome concentrate sourcing, procurement, and supply from Zimbabwe and Southern Africa." />
+<!-- Arial system font — no external import needed -->
+<style>
+/* ============================================================
+   ROYAL HIGH RISE HOLDINGS — CSS
+   Palette: Obsidian · Charcoal · Champagne Gold · White
+   ============================================================ */
+:root {
+  --black:       #0a0a0a;
+  --obsidian:    #111214;
+  --charcoal:    #1c1e22;
+  --mid:         #2a2d33;
+  --steel:       #3d424d;
+  --silver:      #aab0bb;
+  --light:       #d6dae0;
+  --white:       #f2f3f5;
+  --gold:        #b8956a;
+  --gold-light:  #d4ae8c;
+  --gold-dim:    #6b4f32;
+  --accent:      #c4a07a;
+
+  --font-display: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-body:    Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-cond:    Arial, 'Helvetica Neue', Helvetica, sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:  cubic-bezier(0.7, 0, 0.84, 0);
+  --nav-h: 72px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--black);
+  color: var(--light);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--obsidian); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+
+/* ── Selection ── */
+::selection { background: var(--gold); color: var(--black); }
+
+/* ── Utility ── */
+.container { width: min(1240px, 100% - 3rem); margin-inline: auto; }
+.gold { color: var(--gold); }
+.tag {
+  display: inline-block;
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ======================================================
+   NAV
+   ====================================================== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+  transition: background 0.4s, backdrop-filter 0.4s, box-shadow 0.4s;
+}
+nav.scrolled {
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 1px 0 rgba(184,149,106,0.15);
+}
+.nav-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin-left: auto;
+  margin-right: 2rem;
+}
+.nav-links a {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--silver);
+  text-decoration: none;
+  transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.3s var(--ease-out);
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+
+.btn-nav {
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  border: none;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s;
+  display: inline-block;
+  white-space: nowrap;
+}
+.btn-nav:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* Mobile menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--nav-h); left: 0; right: 0;
+  background: rgba(10,10,10,0.97);
+  backdrop-filter: blur(20px);
+  padding: 2rem;
+  z-index: 999;
+  border-bottom: 1px solid var(--gold-dim);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s var(--ease-out), opacity 0.3s;
+  pointer-events: none;
+}
+.mobile-menu.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+.mobile-menu a {
+  display: block;
+  font-family: var(--font-cond);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light);
+  text-decoration: none;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--mid);
+  transition: color 0.2s, padding-left 0.2s;
+}
+.mobile-menu a:hover { color: var(--gold); padding-left: 0.5rem; }
+.mobile-menu .btn-nav { margin-top: 1.5rem; width: 100%; text-align: center; }
+
+/* ======================================================
+   HERO
+   ====================================================== */
+#home {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 60% 40%, rgba(184,149,106,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 20% 80%, rgba(184,149,106,0.04) 0%, transparent 60%),
+    linear-gradient(170deg, var(--black) 0%, #0d0f11 50%, #111418 100%);
+}
+/* animated grain overlay */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.45;
+  pointer-events: none;
+}
+/* golden grid lines */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(184,149,106,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(184,149,106,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 80%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  padding-top: var(--nav-h);
+}
+.hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+  animation: fadeUp 0.9s var(--ease-out) 0.2s both;
+}
+.hero-eyebrow-line {
+  width: 48px; height: 1px;
+  background: var(--gold);
+}
+.hero-eyebrow-text {
+  font-family: var(--font-cond);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 1.75rem;
+  animation: fadeUp 0.9s var(--ease-out) 0.35s both;
+}
+h1 em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--silver);
+  max-width: 540px;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.9s var(--ease-out) 0.5s both;
+  line-height: 1.78;
+}
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.9s var(--ease-out) 0.65s both;
+}
+.btn-primary {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 0.85rem 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  display: inline-block;
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(184,149,106,0.25);
+}
+.btn-outline {
+  font-family: var(--font-cond);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid var(--steel);
+  padding: 0.85rem 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.25s, color 0.25s, transform 0.2s;
+  display: inline-block;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+.hero-stats {
+  position: relative;
+  bottom: auto; right: auto;
+  display: flex;
+  gap: 0;
+  z-index: 2;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  animation: fadeLeft 0.9s var(--ease-out) 0.8s both;
+}
+.hero-stat {
+  padding: 1.5rem 2rem;
+  border-left: 1px solid rgba(184,149,106,0.2);
+  text-align: center;
+}
+.hero-stat:last-child { border-right: 1px solid rgba(184,149,106,0.2); }
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
+.hero-stat-label {
+  font-family: var(--font-cond);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-top: 0.4rem;
+  display: block;
+}
+
+/* ======================================================
+   ABOUT
+   ====================================================== */
+#about {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  position: relative;
+}
+#about::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, var(--obsidian) 0%, var(--black) 100%);
+}
+.about-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.about-visual {
+  position: relative;
+}
+.about-img-wrap {
+  position: relative;
+  aspect-ratio: 4/5;
+  background: var(--charcoal);
+  overflow: hidden;
+}
+.about-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(184,149,106,0.15) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(184,149,106,0.03) 10px,
+      rgba(184,149,106,0.03) 20px
+    );
+}
+.about-img-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  opacity: 0.12;
+  filter: grayscale(1);
+}
+.about-accent-box {
+  position: absolute;
+  bottom: -1.5rem;
+  right: -1.5rem;
+  background: var(--gold);
+  color: var(--black);
+  padding: 1.5rem 2rem;
+  z-index: 2;
+}
+.about-accent-num {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+}
+.about-accent-text {
+  font-family: var(--font-cond);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.about-corner-line {
+  position: absolute;
+  top: -1rem; left: -1rem;
+  width: 48px; height: 48px;
+  border-top: 2px solid var(--gold);
+  border-left: 2px solid var(--gold);
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+h2 em { font-style: italic; color: var(--gold); }
+
+.about-text p {
+  font-size: 0.95rem;
+  color: var(--silver);
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+.about-pillars {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.pillar {
+  padding: 1.25rem;
+  border: 1px solid var(--mid);
+  border-top: 2px solid var(--gold-dim);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.pillar:hover { border-color: var(--gold); transform: translateY(-3px); }
+.pillar-label {
+  font-family: var(--font-cond);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.pillar p { font-size: 0.82rem; color: var(--silver); margin: 0; line-height: 1.6; }
+
+/* ======================================================
+   SERVICES
+   ====================================================== */
+#services {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+#services::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw; height: 80vh;
+  background: radial-gradient(ellipse, rgba(184,149,106,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.section-header .tag { display: inline-block; }
+.section-header h2 { margin-bottom: 1rem; }
+.section-header p {
+  font-size: 0.95rem;
+  color: var(--silver);
+  max-width: 560px;
+  margin-inline: auto;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--mid);
+}
+.service-card {
+  background: var(--obsidian);
+  padding: 2.5rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--gold);
+  transition: width 0.4s var(--ease-out);
+}
+.service-card:hover { background: var(--charcoal); }
+.service-card:hover::after { width: 100%; }
+.service-icon {
+  width: 48px; height: 48px;
+  border: 1px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s, background 0.3s;
+}
+.service-card:hover .service-icon {
+  border-color: var(--gold);
+  background: rgba(184,149,106,0.08);
+}
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+.service-card p { font-size: 0.85rem; color: var(--silver); line-height: 1.75; }
+
+/* ======================================================
+   COMMODITY
+   ====================================================== */
+#commodity {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: var(--obsidian);
+}
+.commodity-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+.grades-table {
+  margin-top: 2rem;
+  border: 1px solid var(--mid);
+}
+.grades-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--mid);
+}
+.grades-row:last-child { border-bottom: none; }
+.grades-row.header {
+  background: var(--mid);
+  font-family: var(--font-cond);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.grades-cell {
+  padding: 0.85rem 1.25rem;
+  font-size: 0.88rem;
+  color: var(--silver);
+  border-right: 1px solid var(--mid);
+}
+.grades-cell:last-child { border-right: none; }
+.grades-row.highlight .grades-cell { color: var(--white); background: rgba(184,149,106,0.06); }
+
+.commodity-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.feature-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.feature-dot {
+  width: 8px; height: 8px;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 0.45rem;
+}
+.feature-row h4 {
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+.feature-row p { font-size: 0.84rem; color: var(--silver); line-height: 1.65; }
+
+.route-visual {
+  border: 1px solid var(--mid);
+  padding: 2.5rem;
+  position: relative;
+}
+.route-visual::before {
+  content: 'SUPPLY ROUTE';
+  position: absolute;
+  top: -0.55rem; left: 1.5rem;
+  font-family: var(--font-cond);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--obsidian);
+  padding: 0 0.5rem;
+}
+.route-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.route-step {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  position: relative;
+}
+.route-step + .route-step { margin-top: 0; }
+.route-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+.route-circle {
+  width: 36px; height: 36px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-cond);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gold);
+  background: var(--obsidian);
+  z-index: 1;
+}
+.route-line {
+  width: 1px;
+  height: 2.5rem;
+  background: linear-gradient(var(--gold-dim), var(--gold-dim));
+  margin-top: 2px;
+}
+.route-step:last-child .route-line { display: none; }
+.route-info {
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+}
+.route-title {
+  font-family: var(--font-cond);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+.route-desc { font-size: 0.8rem; color: var(--silver); line-height: 1.6; }
+
+/* ======================================================
+   LOGISTICS
+   ====================================================== */
+#logistics {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: var(--black);
+}
+.logistics-hero {
+  position: relative;
+  background: var(--charcoal);
+  padding: 4rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+.logistics-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 100% at 90% 50%, rgba(184,149,106,0.08) 0%, transparent 70%),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 40px,
+      rgba(184,149,106,0.03) 40px,
+      rgba(184,149,106,0.03) 41px
+    );
+}
+.logistics-hero-inner { position: relative; max-width: 600px; }
+.logistics-hero h2 { margin-bottom: 1rem; }
+.logistics-hero p { font-size: 0.95rem; color: var(--silver); line-height: 1.8; }
+.logistics-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--mid);
+}
+.logistics-card {
+  background: var(--obsidian);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: background 0.3s;
+}
+.logistics-card:hover { background: var(--charcoal); }
+.l-icon { font-size: 2rem; margin-bottom: 1rem; }
+.l-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.l-desc { font-size: 0.8rem; color: var(--silver); line-height: 1.65; }
+
+/* ======================================================
+   INVESTMENT
+   ====================================================== */
+#investment {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: var(--obsidian);
+  position: relative;
+  overflow: hidden;
+}
+#investment::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+#investment::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+}
+.investment-header { margin-bottom: 4rem; }
+.opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+.opp-card {
+  border: 1px solid var(--mid);
+  border-top: 2px solid var(--gold-dim);
+  padding: 2rem;
+  position: relative;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.opp-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(184,149,106,0.08);
+}
+.opp-num {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: rgba(184,149,106,0.15);
+  line-height: 1;
+  position: absolute;
+  top: 1rem; right: 1.25rem;
+}
+.opp-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.opp-card p { font-size: 0.84rem; color: var(--silver); line-height: 1.75; }
+.opp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+.opp-tag {
+  font-family: var(--font-cond);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  padding: 0.2rem 0.6rem;
+}
+
+.invest-cta {
+  text-align: center;
+  padding: 3rem;
+  border: 1px solid var(--mid);
+  background: var(--charcoal);
+  position: relative;
+  overflow: hidden;
+}
+.invest-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(184,149,106,0.05) 0%, transparent 70%);
+}
+.invest-cta h3 {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+.invest-cta p {
+  position: relative;
+  font-size: 0.92rem;
+  color: var(--silver);
+  max-width: 520px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+/* ======================================================
+   WHY CHOOSE US
+   ====================================================== */
+#why {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: var(--black);
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--mid);
+  margin-top: 3.5rem;
+}
+.why-item {
+  background: var(--obsidian);
+  padding: 2.5rem 2rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: background 0.3s;
+}
+.why-item:hover { background: var(--charcoal); }
+.why-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gold-dim);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 2.5rem;
+  text-align: right;
+  transition: color 0.3s;
+}
+.why-item:hover .why-num { color: var(--gold); }
+.why-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+.why-body p { font-size: 0.84rem; color: var(--silver); line-height: 1.75; }
+
+/* ======================================================
+   CLIENTS / TARGETS
+   ====================================================== */
+#clients {
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  background: var(--charcoal);
+  overflow: hidden;
+  position: relative;
+}
+#clients::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 30px,
+    rgba(184,149,106,0.02) 30px,
+    rgba(184,149,106,0.02) 31px
+  );
+}
+.clients-inner { position: relative; text-align: center; }
+.clients-inner h2 { margin-bottom: 3rem; }
+.clients-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1px;
+  background: var(--steel);
+}
+.client-box {
+  background: var(--obsidian);
+  padding: 1.5rem 2.5rem;
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--silver);
+  transition: color 0.25s, background 0.25s;
+  cursor: default;
+}
+.client-box:hover { color: var(--gold); background: var(--mid); }
+
+/* ======================================================
+   CONTACT
+   ====================================================== */
+#contact {
+  padding: clamp(5rem, 10vw, 9rem) 0;
+  background: var(--obsidian);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 5rem;
+  align-items: start;
+}
+.contact-info h2 { margin-bottom: 1.5rem; }
+.contact-info p { font-size: 0.9rem; color: var(--silver); line-height: 1.8; margin-bottom: 2rem; }
+.contact-details { display: flex; flex-direction: column; gap: 1.25rem; }
+.contact-item { display: flex; gap: 1rem; align-items: flex-start; }
+.contact-icon {
+  width: 36px; height: 36px;
+  border: 1px solid var(--gold-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+.contact-item-text span {
+  display: block;
+  font-family: var(--font-cond);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-dim);
+  margin-bottom: 0.2rem;
+}
+.contact-item-text p { font-size: 0.88rem; color: var(--light); margin: 0; line-height: 1.5; }
+
+/* Form */
+.contact-form {
+  background: var(--charcoal);
+  padding: 2.5rem;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.field {
+  margin-bottom: 1.25rem;
+}
+.field label {
+  display: block;
+  font-family: var(--font-cond);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--silver);
+  margin-bottom: 0.45rem;
+}
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  background: var(--mid);
+  border: 1px solid var(--steel);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  padding: 0.75rem 1rem;
+  transition: border-color 0.25s;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--gold);
+}
+.field textarea { resize: vertical; min-height: 120px; }
+.field select option { background: var(--mid); }
+.form-submit {
+  width: 100%;
+  font-family: var(--font-cond);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+  margin-top: 0.5rem;
+}
+.form-submit:hover { background: var(--gold-light); transform: translateY(-2px); }
+.form-notice {
+  font-size: 0.75rem;
+  color: var(--silver);
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 1.6;
+}
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+}
+.form-success.visible { display: block; }
+.form-success p {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.form-success small { font-size: 0.82rem; color: var(--silver); }
+
+/* ======================================================
+   FOOTER
+   ====================================================== */
+footer {
+  background: var(--black);
+  padding: 4rem 0 2rem;
+  border-top: 1px solid var(--mid);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand .nav-logo { display: inline-flex; align-items: center; }
+.footer-brand p {
+  font-size: 0.82rem;
+  color: var(--silver);
+  line-height: 1.75;
+  margin-top: 1rem;
+  max-width: 260px;
+}
+.footer-col h4 {
+  font-family: var(--font-cond);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col a {
+  font-size: 0.82rem;
+  color: var(--silver);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid var(--mid);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.footer-bottom p, .footer-bottom span {
+  font-size: 0.75rem;
+  color: var(--steel);
+}
+.footer-bottom span em { color: var(--gold-dim); font-style: normal; }
+
+/* ======================================================
+   TICKER STRIP
+   ====================================================== */
+.ticker-strip {
+  background: var(--gold);
+  overflow: hidden;
+  padding: 0.65rem 0;
+  white-space: nowrap;
+}
+.ticker-track {
+  display: inline-flex;
+  gap: 2rem;
+  animation: ticker 32s linear infinite;
+}
+.ticker-track span {
+  font-family: var(--font-cond);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--black);
+}
+.ticker-dot {
+  color: rgba(0,0,0,0.35) !important;
+  font-size: 0.5rem !important;
+  align-self: center;
+}
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ======================================================
+   ANIMATIONS
+   ====================================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Scroll reveal classes */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+@media (max-width: 1024px) {
+  .nav-links, .btn-nav { display: none; }
+  .hamburger { display: flex; }
+  .mobile-menu { display: block; }
+  .about-grid, .commodity-layout, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .logistics-cards { grid-template-columns: 1fr 1fr; }
+  .opportunity-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .hero-stats { position: static; margin-top: 3rem; justify-content: flex-start; }
+  .hero-stat { padding: 1.25rem 1.5rem; }
+
+}
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .logistics-cards { grid-template-columns: 1fr; }
+  .opportunity-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .about-pillars { grid-template-columns: 1fr; }
+  .hero-stats { flex-wrap: wrap; }
+  .logistics-hero { padding: 2rem; }
+  .invest-cta { padding: 2rem; }
+  .contact-form { padding: 1.5rem; }
+}
+
+/* LinkedIn button */
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--silver);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: color 0.2s, transform 0.2s;
+}
+.linkedin-btn:hover { color: var(--white); transform: translateY(-2px); }
+.linkedin-btn svg { flex-shrink: 0; border-radius: 4px; }
+
+
+/* Three-word nav brand */
+.logo-africa  { color: var(--gold); }
+.logo-global  { color: var(--white); }
+.logo-markets { color: var(--white); letter-spacing: 0.04em; }
+.nav-logo-top {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+/* remove old img rule if still present */
+.nav-logo-img { display: none; }
+
+</style>
+</head>
+<body>
+
+<!-- ====================================================
+     NAV
+     ================================================= -->
+<nav id="navbar">
+  <a href="#home" class="nav-logo">
+    <span class="nav-logo-top">ROYAL HIGH RISE HOLDINGS</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#commodity">Commodity</a></li>
+    <li><a href="#logistics">Logistics</a></li>
+    <li><a href="#investment">Investment</a></li>
+    <li><a href="#why">Why Us</a></li>
+  </ul>
+  <a href="#contact" class="btn-nav">Inquire Now</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#commodity" onclick="closeMenu()">Commodity</a>
+  <a href="#logistics" onclick="closeMenu()">Logistics</a>
+  <a href="#investment" onclick="closeMenu()">Investment</a>
+  <a href="#why" onclick="closeMenu()">Why Us</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="#contact" class="btn-nav" onclick="closeMenu()">Inquire Now</a>
+</div>
+
+<!-- ====================================================
+     HERO
+     ================================================= -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">South Africa · Zimbabwe · Global Markets</span>
+      </div>
+      <h1><span style="color:var(--gold);">Africa's</span> <span style="color:var(--white);">Mineral Wealth</span><br><span style="color:var(--white);">To </span><span style="color:var(--gold);">Global Markets</span></h1>
+      <p class="hero-sub">We source, procure, transport, and supply premium chrome concentrate and coal across Southern Africa — providing integrated logistics solutions while connecting verified producers in Zimbabwe and the region to industrial buyers and off-takers worldwide through transparent, efficient, and scalable commodity trade.</p>
+      <div class="hero-ctas">
+        <a href="#commodity" class="btn-primary">Explore Our Product</a>
+        <a href="#contact" class="btn-outline">Partner With Us</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-num">40–52%</span>
+        <span class="hero-stat-label">Chrome Grade</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">ZW–SA</span>
+        <span class="hero-stat-label">Cross-Border Routes</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">7+</span>
+        <span class="hero-stat-label">Core Services</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-num">100%</span>
+        <span class="hero-stat-label">Transparent Ops</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ticker Strip -->
+<div class="ticker-strip">
+  <div class="ticker-track">
+    <span>Chrome Concentrate Trading</span>
+    <span class="ticker-dot">◆</span>
+    <span>Mining Logistics</span>
+    <span class="ticker-dot">◆</span>
+    <span>Trade Finance Partnerships</span>
+    <span class="ticker-dot">◆</span>
+    <span>Supplier & Buyer Matchmaking</span>
+    <span class="ticker-dot">◆</span>
+    <span>Zimbabwe · South Africa · Global Markets</span>
+    <span class="ticker-dot">◆</span>
+    <span>40% – 50% Cr₂O₃ Grade</span>
+    <span class="ticker-dot">◆</span>
+    <span>Chrome Concentrate Trading</span>
+    <span class="ticker-dot">◆</span>
+    <span>Mining Logistics</span>
+    <span class="ticker-dot">◆</span>
+    <span>Trade Finance Partnerships</span>
+    <span class="ticker-dot">◆</span>
+    <span>Supplier & Buyer Matchmaking</span>
+    <span class="ticker-dot">◆</span>
+    <span>Zimbabwe · South Africa · Global Markets</span>
+    <span class="ticker-dot">◆</span>
+    <span>40% – 50% Cr₂O₃ Grade</span>
+    <span class="ticker-dot">◆</span>
+  </div>
+</div>
+
+<!-- ====================================================
+     ABOUT
+     ================================================= -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text" style="max-width:780px;">
+        <span class="tag">About Royal High Rise Holdings</span>
+        <h2>A Trusted Force in <em>African Commodity</em> Trading</h2>
+        <p>Royal High Rise Holdings is a South African-based commodity trading and logistics company specializing in the sourcing, procurement, and supply of chrome concentrate from Zimbabwe and Southern Africa to verified buyers and industrial off-takers.</p>
+        <p>We operate at the core of the mining and commodity supply chain sector — with direct access to chrome concentrate suppliers, established buyer networks, and the operational expertise to facilitate reliable and scalable commodity transactions.</p>
+        <p>Our business is built on trust, transparency, and long-term partnership. Every transaction we facilitate reflects our commitment to professionalism and market integrity across Southern Africa.</p>
+        <div class="about-pillars reveal">
+          <div class="pillar">
+            <div class="pillar-label">Our Mission</div>
+            <p>Build a trusted, scalable commodity trading operation connecting African minerals to global industrial markets through efficient logistics and transparent transactions.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-label">Our Vision</div>
+            <p>Become a leading African commodity trading company renowned for reliability, professionalism, and long-term trade partnerships across global markets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     SERVICES
+     ================================================= -->
+<section id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">What We Do</span>
+      <h2>Comprehensive <em>Trading</em> &amp; Logistics Services</h2>
+      <p>End-to-end commodity solutions from mine to market, tailored for buyers, suppliers, investors, and exporters across Southern Africa and global markets.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg></div>
+        <h3>Chrome Sourcing &amp; Supply</h3>
+        <p>We source premium chrome concentrate directly from producers and suppliers across Zimbabwe and Southern Africa, ensuring consistent quality and supply reliability for industrial buyers.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+        <h3>Commodity Procurement</h3>
+        <p>Bulk commodity procurement and trading services. We purchase in volume, coordinate quality assurance, and deliver to processing facilities and trading hubs including City Deep.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3>Mining Logistics</h3>
+        <p>We coordinate and facilitate mining logistics through our established partner network — ensuring product moves efficiently from mine to processing facility and onward to the buyer.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+        <h3>Trade Finance Partnerships</h3>
+        <p>We facilitate and connect trade finance opportunities for commodity transactions, enabling structured deals between investors, financiers, suppliers, and buyers.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 11h3a2 2 0 0 1 0 4h-3"/><path d="M7 11H4a2 2 0 0 0 0 4h3"/><path d="M7 7l5-5 5 5"/><path d="M12 2v13"/><path d="M7 17l2 4h6l2-4"/></svg></div>
+        <h3>Buyer &amp; Supplier Matchmaking</h3>
+        <p>Leveraging our established networks, we connect verified chrome suppliers with qualified industrial buyers and ferrochrome producers across international markets.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18l4-4h12l4 4"/><path d="M2 18h20"/><path d="M6 14V6a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v8"/><line x1="12" y1="5" x2="12" y2="14"/></svg></div>
+        <h3>Maritime Services</h3>
+        <p>We offer entry-level maritime facilitation services — supporting documentation, port liaison, and coordination with established maritime partners for commodity export requirements.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1" style="grid-column: 1 / -1; grid-template-columns: 1fr;">
+        <div style="display:flex;gap:2rem;align-items:center;flex-wrap:wrap;">
+          <div style="flex-shrink:0">
+            <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          </div>
+          <div>
+            <h3>Export &amp; Delivery Coordination</h3>
+            <p>Full-service export and delivery management — from documentation and regulatory compliance to coordinating final delivery with off-takers and international buyers across global industrial markets.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     COMMODITY
+     ================================================= -->
+<section id="commodity">
+  <div class="container">
+    <div class="commodity-layout">
+      <div>
+        <span class="tag">Our Primary Product</span>
+        <h2>Premium Chrome <em>Concentrate</em></h2>
+        <p style="color:var(--silver);font-size:0.92rem;line-height:1.8;margin-bottom:2rem">We supply chrome concentrate across multiple grades to satisfy diverse industrial requirements. Our product is sourced directly from verified producers, quality-checked, and delivered efficiently.</p>
+
+        <div class="grades-table">
+          <div class="grades-row header">
+            <div class="grades-cell">Grade</div>
+            <div class="grades-cell">Cr₂O₃ Content</div>
+            <div class="grades-cell">Application</div>
+          </div>
+          <div class="grades-row">
+            <div class="grades-cell" style="color:var(--gold)">Standard Grade</div>
+            <div class="grades-cell">40% – 42%</div>
+            <div class="grades-cell">Ferrochrome production</div>
+          </div>
+          <div class="grades-row highlight">
+            <div class="grades-cell" style="color:var(--gold)">Premium Grade</div>
+            <div class="grades-cell">46% – 50%</div>
+            <div class="grades-cell">High-grade industrial use</div>
+          </div>
+          <div class="grades-row">
+            <div class="grades-cell" style="color:var(--silver)">Source Region</div>
+            <div class="grades-cell" colspan="2" style="grid-column:2/-1">Zimbabwe &amp; Southern Africa</div>
+          </div>
+          <div class="grades-row">
+            <div class="grades-cell" style="color:var(--silver)">Delivery Hub</div>
+            <div class="grades-cell">City Deep, RSA</div>
+            <div class="grades-cell">&amp; other trading hubs</div>
+          </div>
+        </div>
+
+        <div class="commodity-features">
+          <div class="feature-row">
+            <div class="feature-dot"></div>
+            <div>
+              <h4>Direct Producer Access</h4>
+              <p>We source exclusively from verified and established producers, eliminating unnecessary middlemen and maintaining pricing integrity.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-dot"></div>
+            <div>
+              <h4>Bulk Purchasing Capacity</h4>
+              <p>We purchase in significant bulk volumes, providing suppliers with reliable off-take and buyers with scalable, consistent supply.</p>
+            </div>
+          </div>
+          <div class="feature-row">
+            <div class="feature-dot"></div>
+            <div>
+              <h4>Quality Assurance</h4>
+              <p>All product grades are verified against industry standards before dispatch, ensuring compliance and buyer confidence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="route-visual">
+          <div class="route-steps">
+            <div class="route-step">
+              <div class="route-node">
+                <div class="route-circle">1</div>
+                <div class="route-line"></div>
+              </div>
+              <div class="route-info">
+                <div class="route-title">Zimbabwe — Mine Sites</div>
+                <div class="route-desc">Chrome concentrate is sourced directly from verified producers across Zimbabwe's mineral-rich regions.</div>
+              </div>
+            </div>
+            <div class="route-step">
+              <div class="route-node">
+                <div class="route-circle">2</div>
+                <div class="route-line"></div>
+              </div>
+              <div class="route-info">
+                <div class="route-title">Quality Verification</div>
+                <div class="route-desc">Product is weighed, graded, and quality-checked against specifications before loading and dispatch.</div>
+              </div>
+            </div>
+            <div class="route-step">
+              <div class="route-node">
+                <div class="route-circle">3</div>
+                <div class="route-line"></div>
+              </div>
+              <div class="route-info">
+                <div class="route-title">Logistics & Transport</div>
+                <div class="route-desc">Coordinated road freight logistics across the Zimbabwe–South Africa border with full compliance management.</div>
+              </div>
+            </div>
+            <div class="route-step">
+              <div class="route-node">
+                <div class="route-circle">4</div>
+                <div class="route-line"></div>
+              </div>
+              <div class="route-info">
+                <div class="route-title">South Africa — Reception</div>
+                <div class="route-desc">Product received at designated South African facilities and trading hubs including City Deep, Johannesburg.</div>
+              </div>
+            </div>
+            <div class="route-step">
+              <div class="route-node">
+                <div class="route-circle">5</div>
+                <div class="route-line"></div>
+              </div>
+              <div class="route-info">
+                <div class="route-title">Buyer Delivery</div>
+                <div class="route-desc">Final delivery to ferrochrome producers, international exporters, and verified industrial off-takers.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="border:1px solid var(--mid);padding:2rem;margin-top:1.5rem;background:var(--charcoal)">
+          <div class="tag" style="margin-bottom:1rem">Interested in Our Product?</div>
+          <p style="font-size:0.88rem;color:var(--silver);line-height:1.75;margin-bottom:1.25rem">Whether you're a ferrochrome producer, industrial processor, or commodity trader — we're ready to discuss specifications, volumes, and pricing.</p>
+          <a href="#contact" class="btn-primary" style="font-size:0.72rem;padding:0.7rem 1.5rem">Request a Product Inquiry →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     LOGISTICS
+     ================================================= -->
+<section id="logistics">
+  <div class="container">
+    <div class="logistics-hero reveal">
+      <div class="logistics-hero-inner">
+        <span class="tag">Logistics Operations</span>
+        <h2><em>Pit to Port</em> Logistics</h2>
+        <p>We coordinate the full logistics chain from mine pit to port or processing facility — working with trusted transport partners to move chrome concentrate and coal safely, efficiently, and on schedule across Southern Africa.</p>
+      </div>
+    </div>
+    <div class="logistics-cards">
+      <div class="logistics-card reveal reveal-delay-1">
+        <div class="l-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
+        <div class="l-title">Pit to Port Routing</div>
+        <div class="l-desc">We coordinate transport from mine sites through to processing facilities, ports, and trading hubs — working with established freight partners on proven routes.</div>
+      </div>
+      <div class="logistics-card reveal reveal-delay-2">
+        <div class="l-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+        <div class="l-title">Documentation & Compliance</div>
+        <div class="l-desc">We handle freight documentation, customs requirements, and compliance coordination through our partner network to keep shipments moving.</div>
+      </div>
+      <div class="logistics-card reveal reveal-delay-3">
+        <div class="l-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="M2 20V8l6-4v4l6-4v4l6-4v16"/><line x1="10" y1="20" x2="10" y2="14"/><line x1="14" y1="20" x2="14" y2="14"/><rect x="10" y="14" width="4" height="6"/></svg></div>
+        <div class="l-title">Hub Delivery</div>
+        <div class="l-desc">Direct delivery to City Deep and other major trading and processing hubs across South Africa.</div>
+      </div>
+      <div class="logistics-card reveal reveal-delay-4">
+        <div class="l-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg></div>
+        <div class="l-title">Coordination &amp; Tracking</div>
+        <div class="l-desc">Real-time coordination between suppliers, transporters, and buyers to ensure on-time and intact delivery every time.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     INVESTMENT
+     ================================================= -->
+<section id="investment">
+  <div class="container">
+    <div class="investment-header reveal">
+      <span class="tag">Investment Opportunities</span>
+      <h2>Partner With a <em>Growing</em> Commodity Operation</h2>
+      <p style="max-width:580px;color:var(--silver);font-size:0.92rem;line-height:1.8">Royal High Rise Holdings presents structured opportunities for investors, trade financiers, and strategic partners seeking exposure to Southern Africa's high-demand chrome commodity market.</p>
+    </div>
+    <div class="opportunity-grid">
+      <div class="opp-card reveal reveal-delay-1">
+        <div class="opp-num">01</div>
+        <h3>Trade Finance</h3>
+        <p>Provide working capital or trade credit facilities to fund chrome concentrate purchases and cross-border logistics. Structured with defined timelines and return terms.</p>
+        <div class="opp-tags">
+          <span class="opp-tag">Short-term</span>
+          <span class="opp-tag">Commodity-backed</span>
+          <span class="opp-tag">Low cycle</span>
+        </div>
+      </div>
+      <div class="opp-card reveal reveal-delay-2">
+        <div class="opp-num">02</div>
+        <h3>Off-take Agreements</h3>
+        <p>Secure reliable, long-term chrome concentrate supply through formal off-take arrangements. Ideal for ferrochrome producers and large-scale industrial buyers seeking supply certainty.</p>
+        <div class="opp-tags">
+          <span class="opp-tag">Long-term</span>
+          <span class="opp-tag">Fixed volume</span>
+          <span class="opp-tag">Grade-specific</span>
+        </div>
+      </div>
+      <div class="opp-card reveal reveal-delay-3">
+        <div class="opp-num">03</div>
+        <h3>Strategic Partnership</h3>
+        <p>Join us as an equity or operational partner to co-develop our commodity trading and logistics platform across Southern Africa and international export markets.</p>
+        <div class="opp-tags">
+          <span class="opp-tag">Equity</span>
+          <span class="opp-tag">Operational</span>
+          <span class="opp-tag">Regional expansion</span>
+        </div>
+      </div>
+    </div>
+    <div class="invest-cta reveal">
+      <h3>Ready to Explore an <em>Investment</em> Opportunity?</h3>
+      <p>We welcome conversations with serious investors, trade finance institutions, and strategic partners. Contact us to receive our business overview and discuss terms.</p>
+      <a href="#contact" class="btn-primary">Schedule a Discussion</a>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     WHY CHOOSE US
+     ================================================= -->
+<section id="why">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="tag">Why Royal High Rise Holdings</span>
+      <h2>Built on <em>Trust,</em> Delivered with <em>Precision</em></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-num">01</div>
+        <div class="why-body">
+          <h3>Direct Supplier Access</h3>
+          <p>We have established direct relationships with chrome concentrate producers in Zimbabwe and Southern Africa, ensuring supply chain integrity and competitive pricing.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-num">02</div>
+        <div class="why-body">
+          <h3>End-to-End Operations</h3>
+          <p>From source to delivery, we manage every step of the commodity journey — procurement, logistics, border compliance, and buyer delivery — under one coordinated operation.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-num">03</div>
+        <div class="why-body">
+          <h3>Transparent Transactions</h3>
+          <p>We operate with full documentation, clear pricing structures, and verifiable deal terms. Every transaction is backed by professional processes and mutual accountability.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-num">04</div>
+        <div class="why-body">
+          <h3>Verified Buyer Networks</h3>
+          <p>Our buyer network includes ferrochrome producers, international off-takers, and industrial processors — providing suppliers and investors with confident market access.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-1">
+        <div class="why-num">05</div>
+        <div class="why-body">
+          <h3>Scalable Supply Capacity</h3>
+          <p>Our operations are designed to scale. We can facilitate growing trade volumes as our supplier and buyer relationships develop across Southern Africa and beyond.</p>
+        </div>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="why-num">06</div>
+        <div class="why-body">
+          <h3>Southern African Expertise</h3>
+          <p>Deep knowledge of regional commodity markets, cross-border trade regulations, logistics routes, and the nuances of mining commodity supply chains in Zimbabwe and South Africa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     TARGET CLIENTS
+     ================================================= -->
+<section id="clients">
+  <div class="container">
+    <div class="clients-inner">
+      <span class="tag">Who We Serve</span>
+      <h2>Our Target <em>Partners &amp; Clients</em></h2>
+      <div class="clients-row">
+        <div class="client-box">Ferrochrome Producers</div>
+        <div class="client-box">Mining Companies</div>
+        <div class="client-box">Commodity Buyers</div>
+        <div class="client-box">International Off-takers</div>
+        <div class="client-box">Exporters</div>
+        <div class="client-box">Investors</div>
+        <div class="client-box">Trade Finance Partners</div>
+        <div class="client-box">Strategic Partners</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     CONTACT
+     ================================================= -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <span class="tag">Get In Touch</span>
+        <h2>Start a <em>Conversation</em> With Us</h2>
+        <p>Whether you're a buyer seeking chrome concentrate, a supplier looking for an off-take partner, or an investor exploring opportunities — we'd like to hear from you.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="contact-item-text">
+              <span>Location</span>
+              <p>South Africa<br><small style="color:var(--silver);font-size:0.78rem">Operations across Zimbabwe &amp; Southern Africa</small></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div class="contact-item-text">
+              <span>Email</span>
+              <p><a href="mailto:info@royalhighrise.co.za" style="color:var(--light);text-decoration:none;">info@royalhighrise.co.za</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg></div>
+            <div class="contact-item-text">
+              <span>Phone</span>
+              <p><a href="tel:0410230774" style="color:var(--light);text-decoration:none;">041 023 0774</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+            <div class="contact-item-text">
+              <span>Markets Served</span>
+              <p>Zimbabwe · South Africa · International</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:2.5rem;padding:1.5rem;border:1px solid var(--gold-dim);border-left:3px solid var(--gold)">
+          <p style="font-family:var(--font-display);font-size:1.05rem;font-style:italic;color:var(--white);margin:0;line-height:1.6">"We respond to all serious business inquiries within 24–48 business hours. Please include your company details and requirements for faster response."</p>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div id="formWrap">
+          <span class="tag">Inquiry Form</span>
+          <div class="form-row">
+            <div class="field">
+              <label>Full Name *</label>
+              <input type="text" id="fname" placeholder="Your full name" />
+            </div>
+            <div class="field">
+              <label>Company Name *</label>
+              <input type="text" id="fcompany" placeholder="Your company" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label>Email Address *</label>
+              <input type="email" id="femail" placeholder="you@company.com" />
+            </div>
+            <div class="field">
+              <label>Phone Number</label>
+              <input type="tel" id="fphone" placeholder="+27 or +263..." />
+            </div>
+          </div>
+          <div class="field">
+            <label>Country / Region *</label>
+            <input type="text" id="fcountry" placeholder="e.g. South Africa, Zimbabwe, UAE..." />
+          </div>
+          <div class="field">
+            <label>Inquiry Type *</label>
+            <select id="ftype">
+              <option value="" disabled selected>Select inquiry type</option>
+              <option>Chrome Concentrate — Buyer Inquiry</option>
+              <option>Chrome Concentrate — Supplier Inquiry</option>
+              <option>Logistics &amp; Transport Services</option>
+              <option>Investment / Trade Finance</option>
+              <option>Off-take Agreement</option>
+              <option>Strategic Partnership</option>
+              <option>General Business Inquiry</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Volume / Requirements</label>
+            <input type="text" id="fvolume" placeholder="e.g. 500MT per month, Grade 46-50%..." />
+          </div>
+          <div class="field">
+            <label>Message *</label>
+            <textarea id="fmessage" placeholder="Please describe your requirements, company background, and how you'd like to work with us..."></textarea>
+          </div>
+          <button class="form-submit" onclick="submitForm()">Submit Inquiry →</button>
+          <p class="form-notice">Your information is confidential and used only to respond to your inquiry. We do not share details with third parties without consent.</p>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div style="font-size:2.5rem;margin-bottom:1rem">✅</div>
+          <p>Inquiry Received</p>
+          <small>Thank you for reaching out to Royal High Rise Holdings. Our team will review your inquiry and respond within 24–48 business hours.</small>
+          <div style="margin-top:2rem">
+            <a href="#" onclick="resetForm(); return false;" class="btn-outline" style="font-size:0.72rem;padding:0.7rem 1.5rem">Submit Another Inquiry</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================
+     FOOTER
+     ================================================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo">
+          <span class="nav-logo-top">ROYAL HIGH RISE HOLDINGS</span>
+        </a>
+        <p>A South African commodity trading and logistics company specializing in chrome concentrate sourcing, procurement, and supply across Zimbabwe and Southern Africa.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#clients">Who We Serve</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Chrome Sourcing</a></li>
+          <li><a href="#commodity">Commodity Trading</a></li>
+          <li><a href="#logistics">Logistics</a></li>
+          <li><a href="#investment">Investment Ops</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect With Us</h4>
+        <ul>
+          <li><a href="#contact">Buyer Inquiries</a></li>
+          <li><a href="#contact">Supplier Inquiries</a></li>
+          <li><a href="#contact">Investor Relations</a></li>
+          <li><a href="https://www.linkedin.com/company/royal-high-holdings/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Royal High Rise Holdings. All rights reserved.</p>
+      <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+        <span>info@royalhighrise.co.za &nbsp;·&nbsp; 041 023 0774</span>
+        <a href="https://www.linkedin.com/company/royal-high-holdings/?viewAsMember=true" target="_blank" rel="noopener" class="linkedin-btn" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="4" fill="none" stroke="white" stroke-width="1.5"/>
+            <path d="M7.5 9.5H5V19H7.5V9.5ZM6.25 8.5C7.08 8.5 7.75 7.83 7.75 7C7.75 6.17 7.08 5.5 6.25 5.5C5.42 5.5 4.75 6.17 4.75 7C4.75 7.83 5.42 8.5 6.25 8.5ZM19 19H16.5V14.15C16.5 12.45 15.75 12 14.75 12C13.75 12 13 12.75 13 14.15V19H10.5V9.5H13V10.75C13.5 9.9 14.5 9.25 15.75 9.25C17.8 9.25 19 10.5 19 13.25V19Z" fill="white"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ====================================================
+     JS
+     ================================================= -->
+<script>
+// Nav scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+function closeMenu() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Form — sends via Formspree to info@royalhighrise.co.za
+async function submitForm() {
+  const name    = document.getElementById('fname').value.trim();
+  const company = document.getElementById('fcompany').value.trim();
+  const email   = document.getElementById('femail').value.trim();
+  const phone   = document.getElementById('fphone').value.trim();
+  const country = document.getElementById('fcountry').value.trim();
+  const type    = document.getElementById('ftype').value;
+  const volume  = document.getElementById('fvolume').value.trim();
+  const msg     = document.getElementById('fmessage').value.trim();
+
+  if (!name || !company || !email || !type || !msg) {
+    alert('Please fill in all required fields (marked with *).');
+    return;
+  }
+  if (!/^[^\u0020@]+@[^\u0020@]+\.[^\u0020@]+$/.test(email)) {
+    alert('Please enter a valid email address.');
+    return;
+  }
+
+  const btn = document.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://formspree.io/f/xgvkqkoe', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'New Enquiry from ' + name + ' — Royal High Rise Holdings',
+        _replyto: email,
+        name, company, email, phone, country,
+        inquiry_type: type,
+        volume_requirements: volume,
+        message: msg
+      })
+    });
+
+    if (res.ok) {
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('formSuccess').classList.add('visible');
+    } else {
+      throw new Error('Server error');
+    }
+  } catch(err) {
+    // Fallback: open mailto
+    const body = encodeURIComponent(
+      'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email +
+      '\nPhone: ' + phone + '\nCountry: ' + country +
+      '\nInquiry Type: ' + type + '\nVolume/Requirements: ' + volume +
+      '\n\nMessage:\n' + msg
+    );
+    window.location.href = 'mailto:info@royalhighrise.co.za?subject=Enquiry from ' + encodeURIComponent(name) + '&body=' + body;
+    btn.textContent = 'Submit Inquiry →';
+    btn.disabled = false;
+  }
+}
+function resetForm() {
+  document.getElementById('fname').value = '';
+  document.getElementById('fcompany').value = '';
+  document.getElementById('femail').value = '';
+  document.getElementById('fphone').value = '';
+  document.getElementById('fcountry').value = '';
+  document.getElementById('ftype').value = '';
+  document.getElementById('fvolume').value = '';
+  document.getElementById('fmessage').value = '';
+  document.getElementById('formWrap').style.display = 'block';
+  document.getElementById('formSuccess').classList.remove('visible');
+}
+
+// Smooth anchor for all links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
